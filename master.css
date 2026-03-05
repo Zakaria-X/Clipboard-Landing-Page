@@ -1,0 +1,293 @@
+:root {
+  --green-500: hsl(171, 66%, 44%);
+  --blue-100: hsl(233, 100%, 69%);
+  --gray-700: hsl(210, 10%, 33%);
+  --gray-500: hsl(201, 11%, 66%);
+  --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 18px;
+  color: var(--gray-700);
+  line-height: 1.6;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--gray-700);
+  line-height: 1.25;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  color: var(--gray-500);
+  max-width: 62ch;
+  margin: 1rem auto 0;
+}
+
+.hero,
+.section-intro,
+.section-access,
+.section-workflow,
+.section-cta {
+  padding: 0 1.6rem;
+}
+
+.hero {
+  background: url("./images/bg-header-mobile.png") no-repeat top center / cover;
+  padding-top: 7.5rem;
+}
+
+.hero-logo {
+  margin: 0 auto 3rem;
+  width: 8rem;
+}
+
+.button-row {
+  margin-top: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  width: min(100%, 20rem);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.12);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-ios {
+  background-color: var(--green-500);
+  border-bottom: 3px solid hsl(171, 66%, 36%);
+}
+
+.btn-mac {
+  background-color: var(--blue-100);
+  border-bottom: 3px solid hsl(233, 55%, 58%);
+}
+
+.section-intro {
+  margin-top: 10rem;
+}
+
+.features {
+  margin-top: 4rem;
+  padding: 0 1.6rem;
+}
+
+.features > img {
+  margin: 0 auto;
+}
+
+.feature-list {
+  margin-top: 3.5rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.section-access {
+  margin-top: 11rem;
+}
+
+.section-access img {
+  margin: 4rem auto 0;
+}
+
+.section-workflow {
+  margin-top: 8rem;
+}
+
+.workflow-grid {
+  margin-top: 5rem;
+  display: grid;
+  gap: 3.5rem;
+}
+
+.workflow-grid article img {
+  margin: 0 auto 2rem;
+}
+
+.brands {
+  margin-top: 9rem;
+  padding: 0 1.6rem;
+  display: grid;
+  justify-items: center;
+  gap: 3.8rem;
+}
+
+.section-cta {
+  margin-top: 10rem;
+}
+
+footer {
+  margin-top: 11rem;
+  background-color: hsl(220, 18%, 97%);
+  padding: 3.2rem 1.6rem 2.2rem;
+}
+
+.footer-logo {
+  width: 3.4rem;
+  margin: 0 auto;
+}
+
+footer nav {
+  margin-top: 2.4rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+footer nav a {
+  text-decoration: none;
+  color: var(--gray-700);
+  transition: color 0.2s ease;
+}
+
+footer nav a:hover {
+  color: var(--green-500);
+}
+
+.social-links a:hover img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(71%) saturate(435%)
+    hue-rotate(118deg) brightness(88%) contrast(89%);
+}
+
+.social-links {
+  margin-top: 2.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links img {
+  width: 1.5rem;
+}
+
+.attribution {
+  margin-top: 2.2rem;
+  font-size: 0.75rem;
+}
+
+.attribution a {
+  color: var(--blue-100);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url("./images/bg-header-desktop.png");
+    padding-top: 8.2rem;
+  }
+
+  .button-row {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 4.5rem;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 3rem;
+  }
+
+  .features > img {
+    transform: translateX(-3rem);
+  }
+
+  .feature-list p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .workflow-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 2rem;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .brands {
+    grid-template-columns: repeat(5, auto);
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  footer {
+    padding: 2.6rem 2.2rem 1.8rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 3rem;
+    text-align: left;
+  }
+
+  .footer-logo {
+    margin: 0;
+  }
+
+  footer nav {
+    margin: 0;
+    grid-template-columns: repeat(3, max-content);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 4rem;
+    row-gap: 0.4rem;
+    justify-content: start;
+  }
+
+  .social-links {
+    margin: 0;
+  }
+
+  .attribution {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
